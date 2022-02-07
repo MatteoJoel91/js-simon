@@ -14,18 +14,19 @@ const numeri_2 = [];
 
 console.log(numeri);
 
-for (let i = 1; i <= array_length; i++) {
-    numeri.push(numero_random(1, 10)) 
+const container = document.getElementById('container');
+
+
+
+for (let i = 0; i < array_length; i++) {
+    numeri.push(numero_random(1, 100))   
 };
 
-for (let i = 1; i <= array_length; i++) {
-    numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
-    if (numeri_inseriti == numeri) {
-        numeri_2.push(numeri_inseriti);
-    }
-};
+let contenuto = '';
+contenuto += `<span>${numeri}</span>`;
+container.innerHTML = contenuto;
 
-console.log(numeri_2);
+setTimeout(verifica,3000);
 
 
 
@@ -38,7 +39,16 @@ console.log(numeri_2);
 
 
 
-
+function verifica() {
+    for (let i = 0; i < array_length; i++) {
+        numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
+        if (numeri.includes(numeri_inseriti)) {
+            numeri_2.push(numeri_inseriti);
+        }
+    };
+    console.log(numeri_2);
+    console.log('Hai indovinato ' + numeri_2.length + ' numeri su 5');
+}
 
 // funzione numero random
 function numero_random(min, max) {
