@@ -23,9 +23,8 @@ for (let i = 0; i < array_length; i++) {
 };
 
 let contenuto = '';
-contenuto += `<span>${numeri}</span>`;
+contenuto += `<span id="numeri">${numeri}</span>`;
 container.innerHTML = contenuto;
-
 setTimeout(verifica,3000);
 
 
@@ -40,14 +39,17 @@ setTimeout(verifica,3000);
 
 
 function verifica() {
-    for (let i = 0; i < array_length; i++) {
+    document.getElementById('numeri').style.display = 'none';
+    setTimeout(() => {
+        for (let i = 0; i < array_length; i++) {
         numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
         if (numeri.includes(numeri_inseriti)) {
             numeri_2.push(numeri_inseriti);
-        }
-    };
-    console.log(numeri_2);
-    console.log('Hai indovinato ' + numeri_2.length + ' numeri su 5');
+            }
+        };
+        console.log(numeri_2);
+        console.log('Hai indovinato ' + numeri_2.length + ' numeri su 5');
+    }, 250);  
 }
 
 // funzione numero random
