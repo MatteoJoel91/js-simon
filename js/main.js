@@ -30,14 +30,6 @@ setTimeout(verifica,3000);
 
 
 
-
-
-
-
-
-
-
-
 function verifica() {
     document.getElementById('numeri').style.display = 'none';
     setTimeout(() => {
@@ -47,7 +39,13 @@ function verifica() {
             numeri_2.push(numeri_inseriti);
             }
         };
+        let numeri_indovinati = numeri_2.length;
+        let contenuto2 = '';
+        contenuto2 += `<span>${numeri_2}</span>
+                      <span>Hai indovinato ${numeri_indovinati} numeri su 5</span>`;
+        container.innerHTML = contenuto2;
         console.log(numeri_2);
+
         console.log('Hai indovinato ' + numeri_2.length + ' numeri su 5');
     }, 250);  
 }
