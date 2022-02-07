@@ -25,7 +25,7 @@ for (let i = 0; i < array_length; i++) {
 let contenuto = '';
 contenuto += `<span id="numeri">${numeri}</span>`;
 container.innerHTML = contenuto;
-setTimeout(verifica,3000);
+setTimeout(verifica,30000);
 
 
 
@@ -35,6 +35,9 @@ function verifica() {
     setTimeout(() => {
         for (let i = 0; i < array_length; i++) {
         numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
+        while (numeri_2.includes(numeri_inseriti)) {
+            numeri_inseriti = parseInt(prompt('Hai già inserito questo numero, inseriscine un altro'));
+        }
         if (numeri.includes(numeri_inseriti)) {
             numeri_2.push(numeri_inseriti);
             }
