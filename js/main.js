@@ -25,6 +25,7 @@ for (let i = 0; i < array_length; i++) {
 let contenuto = '';
 contenuto += `<span id="numeri">${numeri}</span>`;
 container.innerHTML = contenuto;
+
 setTimeout(verifica,3000);
 
 function verifica() {
@@ -40,13 +41,21 @@ function verifica() {
             }
         };
         let numeri_indovinati = numeri_2.length;
+
         let contenuto2 = '';
-        contenuto2 += `<span>${numeri_2}</span>
+
+        if (numeri_indovinati == 1) {
+            contenuto2 += `<span>${numeri_2}</span>
+                      <span>Hai indovinato ${numeri_indovinati} numero su 5</span>`;
+        }else{
+            contenuto2 += `<span>${numeri_2}</span>
                       <span>Hai indovinato ${numeri_indovinati} numeri su 5</span>`;
+        }
+        
         container.innerHTML = contenuto2;
         console.log(numeri_2);
 
-        console.log('Hai indovinato ' + numeri_2.length + ' numeri su 5');
+        console.log('Hai indovinato ' + numeri_2.length + ' numero/i su 5');
     }, 250);  
 }
 
