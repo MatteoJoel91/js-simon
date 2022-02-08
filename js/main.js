@@ -19,27 +19,24 @@ const container = document.getElementById('container');
 
 
 for (let i = 0; i < array_length; i++) {
-    numeri.push(numero_random(1, 100))   
+    numeri.push(numero_random(1, 100))  
 };
 
 let contenuto = '';
 contenuto += `<span id="numeri">${numeri}</span>`;
 container.innerHTML = contenuto;
-setTimeout(verifica,30000);
-
-
-
+setTimeout(verifica,3000);
 
 function verifica() {
     document.getElementById('numeri').style.display = 'none';
     setTimeout(() => {
         for (let i = 0; i < array_length; i++) {
-        numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
-        while (numeri_2.includes(numeri_inseriti)) {
-            numeri_inseriti = parseInt(prompt('Hai già inserito questo numero, inseriscine un altro'));
-        }
-        if (numeri.includes(numeri_inseriti)) {
-            numeri_2.push(numeri_inseriti);
+            numeri_inseriti = parseInt(prompt('Inserisci i numeri che hai visualizzato'));
+            while (numeri_2.includes(numeri_inseriti)) {
+                numeri_inseriti = parseInt(prompt('Hai già inserito questo numero, inseriscine un altro'));
+            }
+            if (numeri.includes(numeri_inseriti)) {
+                numeri_2.push(numeri_inseriti);
             }
         };
         let numeri_indovinati = numeri_2.length;
